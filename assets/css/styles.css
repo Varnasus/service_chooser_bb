@@ -2,17 +2,14 @@
 	Simple reset
 --------------------------*/
 
-
 *{
 	margin:0;
 	padding:0;
 }
 
-
 /*-------------------------
 	General Styles
 --------------------------*/
-
 
 html{
 	background-color:#edf0f4;
@@ -36,11 +33,9 @@ section, footer, header, aside{
 	display: block;
 }
 
-
 /*----------------------------
 	The main content element
 -----------------------------*/
-
 
 #main{
 	padding:100px;
@@ -105,6 +100,7 @@ section, footer, header, aside{
 #total span{
 	display:inline-block;
 	min-width:70px;
+    color: #86e550;
 }
 
 
@@ -127,13 +123,12 @@ section, footer, header, aside{
 
 #order:hover{
 	opacity: 0.9;
+	background-color: #86e550
 }
-
 
 /*----------------------------
 	The Demo Footer
 -----------------------------*/
-
 
 footer{
 	background-color: #080808;

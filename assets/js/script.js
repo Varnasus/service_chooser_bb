@@ -8,6 +8,7 @@ $(function(){
 
         defaults:{
             title: 'My service',
+            body: ' ',
             price: 100,
             checked: false
         },
@@ -30,14 +31,29 @@ $(function(){
         }
     });
 
-    // Prefill the collection with a number of services.
+    // // Prefill the collection with a number of services.
     var services = new ServiceList([
-        new Service({ title: 'web development', price: 200}),
-        new Service({ title: 'web design', price: 250}),
-        new Service({ title: 'photography', price: 100}),
-        new Service({ title: 'coffee drinking', price: 10})
-        // Add more here
-    ]);
+    {
+        title: 'Web Development',
+        body: 'Python, Django, SCSS, Javascript',
+        price: 200
+    },
+    {
+        title: 'Web Design',
+        body: 'All your design needs!',
+        price: 250
+    },
+    {
+        title: 'Photography',
+        body: 'Original photos and images',
+        price: 100
+    },
+    {
+        title: 'Coffee',
+        body: 'Keep me motivated and awake!',
+        price: 5
+    }
+ ]);
 
     // This view turns a Service model into HTML. Will create LI elements.
     var ServiceView = Backbone.View.extend({
@@ -59,12 +75,15 @@ $(function(){
 
             // Create the HTML
 
-            this.$el.html('<input type="checkbox" value="1" name="' + this.model.get('title') + '" /> ' + this.model.get('title') + '<span>$' + this.model.get('price') + '</span>');
-            this.$('input').prop('checked', this.model.get('checked'));
+                this.$el.html('<input type="checkbox" value="1" name="' + this.model.get('title') + '" /> ' +
+                this.model.get('title') + '<br />' +this.model.get('body') + '<span>$' +
+                this.model.get('price') + '</span>');
+
+                this.$('input').prop('checked', this.model.get('checked'));
 
             // Returning the object is a good practice
             // that makes chaining possible
-            return this;
+                return this;
         },
 
         toggleService: function(){
